@@ -18,21 +18,36 @@ export default function Header() {
   const list = [
     {
       title: "DAILY",
-      description1: "summer socks",
-      description2: "winter socks",
+      description1: "MEN SOCKS",
+      description2: "WOMEN SOCKS",
     },
     {
       title: "SPORTS",
-      description1: "hockey socks",
-      description2: "tennis socks",
+      description1: "TENNIS SOCKS",
+      description2: "SKI SOCKS",
+      description3: "RUNNING SOCKS",
+      description4: "HOCKEY SOCKS",
+      description5: "RECOVERY SOCKS",
+      description6: "CYCLING SOCKS",
+    },
+    {
+      title: "TRAVEL",
+      description1: "TRAVEL SOCKS",
+    },
+    {
+      title: "MEDICAL",
+      description1: "MEDICAL SOCKS",
     },
   ];
 
   return (
     <div>
       <div className="header">
-        <div className="menu-icon">
+        <div className={active ? "menu-icon hidden" : "menu-icon"}>
           <GiHamburgerMenu className="menu" onClick={showMenu} />
+        </div>
+        <div className="companyName">
+          <img src="./logo.png" />
         </div>
       </div>
 
@@ -87,9 +102,32 @@ export default function Header() {
               return (
                 <Accordion.Item eventKey={index}>
                   <Accordion.Header>{element.title}</Accordion.Header>
-
                   <Accordion.Body>{element.description1}</Accordion.Body>
-                  <Accordion.Body>{element.description2}</Accordion.Body>
+                  {element.description2 ? (
+                    <Accordion.Body>{element.description2}</Accordion.Body>
+                  ) : (
+                    ""
+                  )}
+                  {element.description3 ? (
+                    <Accordion.Body>{element.description3}</Accordion.Body>
+                  ) : (
+                    ""
+                  )}
+                  {element.description4 ? (
+                    <Accordion.Body>{element.description4}</Accordion.Body>
+                  ) : (
+                    ""
+                  )}
+                  {element.description5 ? (
+                    <Accordion.Body>{element.description5}</Accordion.Body>
+                  ) : (
+                    ""
+                  )}
+                  {element.description6 ? (
+                    <Accordion.Body>{element.description6}</Accordion.Body>
+                  ) : (
+                    ""
+                  )}
                 </Accordion.Item>
               );
             })}
