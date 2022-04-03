@@ -7,6 +7,7 @@ import Accordion from "react-bootstrap/Accordion";
 import "./Header.css";
 import "swiper/css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { GrShop } from "react-icons/gr";
 
 export default function Header() {
   const [active, setActive] = useState(false);
@@ -46,8 +47,12 @@ export default function Header() {
         <div className={active ? "menu-icon hidden" : "menu-icon"}>
           <GiHamburgerMenu className="menu" onClick={showMenu} />
         </div>
+
         <div className="companyName">
           <img src="./logo.png" />
+        </div>
+        <div className="shoppingCard">
+          <GrShop />
         </div>
       </div>
 
@@ -102,29 +107,47 @@ export default function Header() {
               return (
                 <Accordion.Item eventKey={index}>
                   <Accordion.Header>{element.title}</Accordion.Header>
-                  <Accordion.Body>{element.description1}</Accordion.Body>
+                  <Accordion.Body>
+                    <p class="AccordionDescription">{element.description1}</p>
+                    <p class="AccordionProducts">25 products</p>
+                  </Accordion.Body>
                   {element.description2 ? (
-                    <Accordion.Body>{element.description2}</Accordion.Body>
+                    <Accordion.Body>
+                      <p class="AccordionDescription">{element.description2}</p>
+                      <p class="AccordionProducts">25 products</p>
+                    </Accordion.Body>
                   ) : (
                     ""
                   )}
                   {element.description3 ? (
-                    <Accordion.Body>{element.description3}</Accordion.Body>
+                    <Accordion.Body>
+                      <p class="AccordionDescription">{element.description3}</p>
+                      <p class="AccordionProducts">25 products</p>
+                    </Accordion.Body>
                   ) : (
                     ""
                   )}
                   {element.description4 ? (
-                    <Accordion.Body>{element.description4}</Accordion.Body>
+                    <Accordion.Body>
+                      <p class="AccordionDescription">{element.description4}</p>
+                      <p class="AccordionProducts">25 products</p>
+                    </Accordion.Body>
                   ) : (
                     ""
                   )}
                   {element.description5 ? (
-                    <Accordion.Body>{element.description5}</Accordion.Body>
+                    <Accordion.Body>
+                      <p class="AccordionDescription">{element.description5}</p>
+                      <p class="AccordionProducts">25 products</p>
+                    </Accordion.Body>
                   ) : (
                     ""
                   )}
                   {element.description6 ? (
-                    <Accordion.Body>{element.description6}</Accordion.Body>
+                    <Accordion.Body>
+                      <p class="AccordionDescription">{element.description6}</p>
+                      <p class="AccordionProducts">25 products</p>
+                    </Accordion.Body>
                   ) : (
                     ""
                   )}
